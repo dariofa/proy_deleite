@@ -75,7 +75,12 @@ class ProductosBodegaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $producto_bodega = ProductoBodega::find($id);
+        $producto_bodega->fill($request->all());
+        $producto_bodega->save();
+        Flash::success('Producto: '.$producto_bodega->nombre.' actualizado con exito');        
+        return redirect('/admin/bodega/producto/');
+            
     }
 
     /**
@@ -86,17 +91,21 @@ class ProductosBodegaController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $producto_bodega = ProductoBodega::find($id);
+         $producto_bodega->delete();
+         Flash::success('Producto: '.$producto_bodega->nombre.' eliminado con exito');
+        return redirect('/admin/bodega/producto/');
     }
 
     public function stockUpdate(Request $request){
             $producto_bodega = ProductoBodega::find($request->id);
-            $gr_actual = $producto_bodega->peso_gr;
-            $kg_actual = $producto_bodega->peso_kg;
+            
 
+            $new_precio = $producto_bodega->precio + $request->precio;
             $new_gr = $producto_bodega->peso_gr + $request->peso_gr;
             $new_kg = $producto_bodega->peso_kg + $request->peso_kg;
 
+            $producto_bodega->precio = $new_precio;
             $producto_bodega->peso_gr = $new_gr;
             $producto_bodega->peso_kg = $new_kg;
             $producto_bodega->save();

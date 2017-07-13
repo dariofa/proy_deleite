@@ -37,10 +37,14 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
 	Route::get('bodega/producto/','ProductosBodegaController@index');
 	Route::get('bodega/producto/crear','ProductosBodegaController@create');
 	Route::get('bodega/producto/edit/{id}','ProductosBodegaController@edit');
-	Route::get('bodega/producto/delete/{id}','ProductosBodegaController@delete');
+	Route::get('bodega/producto/delete/{id}','ProductosBodegaController@destroy');
 	Route::post('bodega/producto/store',[
 	'uses' => 'ProductosBodegaController@store',
 	'as'=>'admin.bodega.producto.store'
+	]);
+	Route::post('bodega/producto/update/{id}',[
+	'uses' => 'ProductosBodegaController@update',
+	'as'=>'admin.bodega.producto.update'
 	]);
 	Route::post('bodega/producto/stock/update',[
 	'uses' => 'ProductosBodegaController@stockUpdate',

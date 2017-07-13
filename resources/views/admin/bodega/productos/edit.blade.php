@@ -32,7 +32,7 @@
 						<div class="row">
 							<div class="col-md-7">
 								<div class="form">
-				{!! Form::open(['route' => 'admin.bodega.producto.store', 'method' => 'post']) !!}
+				{!! Form::open(['route' => ['admin.bodega.producto.update',$producto_bodega->id], 'method' => 'post']) !!}
 
                 {!! Form::label('nombre','Nombre del Producto') !!}
                 {!! Form::text('nombre',$producto_bodega->nombre,['class'=>'form-control']) !!}

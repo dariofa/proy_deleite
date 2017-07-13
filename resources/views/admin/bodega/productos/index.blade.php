@@ -104,7 +104,8 @@
       </div>
       {!! Form::open(['route' => ['admin.bodega.producto.stock.update'], 'method' => 'post']) !!}		{!! Form::hidden('id',null,['class'=>'form-control','id'=>'producto_id']) !!}
       <div class="modal-body">
-
+		{!! Form::label('precio','Precio') !!}
+        {!! Form::text('precio',null,['class'=>'form-control','id'=>'precio']) !!}
 		{!! Form::label('peso_kg','Agregar en Kilogramos') !!}
         {!! Form::text('peso_kg',null,['class'=>'form-control','id'=>'peso_kg']) !!}
        {!! Form::label('peso_gr','Agregar en Gramos') !!}
