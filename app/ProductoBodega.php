@@ -16,5 +16,7 @@ class ProductoBodega extends Model
 			'descripcion'
 		];
 
-    
+    public function recetas(){
+    return $this->belongsToMany('App\Receta','productos_recetas')->withPivot('cantidad_kg','cantidad_gr','producto_bodega_id','receta_id')->withTimestamps();
+    }
 }

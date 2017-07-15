@@ -15,7 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+ Route::post('users/store',[
+	'uses' => 'UsersController@store',
+	'as'=>'admin.users.store'
+	]);
 
 
 Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
@@ -27,10 +30,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
     #adminlte_routes
 
 	//Administracion de users
-    Route::post('users/store',[
-	'uses' => 'UsersController@store',
-	'as'=>'admin.users.store'
-	]);
+   
 
 
 	//Administracion de productos bodega
@@ -50,7 +50,33 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
 	'uses' => 'ProductosBodegaController@stockUpdate',
 	'as'=>'admin.bodega.producto.stock.update'
 	]);
+	Route::post('bodega/producto/search','ProductosBodegaController@search');
+
+	//Administracion de recetas
+	Route::get('/recetas/','RecetasController@index');
+	Route::get('/recetas/create','RecetasController@create');
+	Route::get('/recetas/edit/{id}','RecetasController@edit');
+	Route::get('/recetas/producto/delete/{id_rec}/{id_pro}','RecetasController@prodDelete');
+	Route::post('recetas/store',[
+	'uses' => 'RecetasController@store',
+	'as'=>'admin.recetas.store'
+	]);
+	Route::post('recetas/update/{id}',[
+	'uses' => 'RecetasController@update',
+	'as'=>'admin.recetas.update'
+	]);
+	Route::post('/receta/producto/update',[
+	'uses' => 'RecetasController@productUpdate',
+	'as'=>'admin.recetas.product.update'
+	]);
+	Route::post('/receta/producto/add',[
+	'uses' => 'RecetasController@productAdd',
+	'as'=>'admin.recetas.product.add'
+	]);
+
 });
+
+///
 
 Auth::routes();
 

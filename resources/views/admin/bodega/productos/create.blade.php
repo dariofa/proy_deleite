@@ -30,7 +30,7 @@
 					<div class="box-body">
 						
 						<div class="row">
-							<div class="col-md-7">
+							<div class="col-md-8 col-md-offset-2">
 								<div class="form">
 				{!! Form::open(['route' => 'admin.bodega.producto.store', 'method' => 'post']) !!}
 

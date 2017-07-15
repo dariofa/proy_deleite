@@ -114,4 +114,9 @@ class ProductosBodegaController extends Controller
             return redirect('/admin/bodega/producto/');
             
     }
+
+    public function search(Request $request){
+        $productos_bodega = ProductoBodega::all();
+        return response()->json($productos_bodega);
+    }
 }
