@@ -75,6 +75,37 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
 	'as'=>'admin.recetas.product.add'
 	]);
 
+	//Administracion de clientes
+	Route::get('/clientes/','ClientesController@index');
+	Route::get('/clientes/create','ClientesController@create');
+	Route::get('/clientes/delete/{id}','ClientesController@destroy');
+	Route::get('/clientes/edit/{id}','ClientesController@edit');
+	Route::get('/clientes/delete/{id}','ClientesController@Delete');
+	Route::post('clientes/store',[
+	'uses' => 'ClientesController@store',
+	'as'=>'admin.clientes.store'
+	]);
+	Route::post('clientes/update/{id}',[
+	'uses' => 'ClientesController@update',
+	'as'=>'admin.clientes.update'
+	]);
+
+	//Administracion de canastillas
+
+	Route::get('/canastillas/','CanastillasController@index');
+	Route::get('/canastillas/create','CanastillasController@create');
+	Route::get('/canastillas/delete/{id}','CanastillasController@destroy');
+	Route::get('/canastillas/edit/{id}','CanastillasController@edit');
+	Route::get('/canastillas/delete/{id}','CanastillasController@Delete');
+	Route::post('canastillas/store',[
+	'uses' => 'CanastillasController@store',
+	'as'=>'admin.canastillas.store'
+	]);
+	Route::post('canastillas/update/{id}',[
+	'uses' => 'CanastillasController@update',
+	'as'=>'admin.canastillas.update'
+	]);
+
 });
 
 ///

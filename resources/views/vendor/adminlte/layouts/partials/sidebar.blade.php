@@ -49,12 +49,11 @@
                     <a href="/admin/bodega/producto/crear">Agregar un Producto</a>
                     </li>
                 </ul>
+                
             </li>  
                     </li>
                     
-
-
-                </ul>
+                </ul><!-- /.treeview-menu (bodega) -->
 
                 <ul class="treeview-menu">
                     <li>
@@ -68,11 +67,29 @@
                     <a href="/admin/recetas/create">Agregar una Receta</a>
                     </li>
                 </ul>
+
             </li>  
+             </li> 
+             </ul>
+                <ul class="treeview-menu">
+                    <li>
+                       <li class="treeview">
+                <a href="#"><i class='fa fa-user-circle'></i> <span>Clientes</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li>
+                    <a href="/admin/clientes/">Ver Todos los Clientes</a>
                     </li>
-                    
+                    <li>
+                    <a href="/admin/clientes/crear">Agregar un Cliente</a>
+                    </li>
                 </ul>
-            </li>
+                
+                        </li>  
+                    </li>   
+                </ul>
+
+        </li><!-- /.treeview -->
+
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
