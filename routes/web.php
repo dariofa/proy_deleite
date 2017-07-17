@@ -55,6 +55,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
 	//Administracion de recetas
 	Route::get('/recetas/','RecetasController@index');
 	Route::get('/recetas/create','RecetasController@create');
+	Route::get('/recetas/delete/{id}','RecetasController@destroy');
 	Route::get('/recetas/edit/{id}','RecetasController@edit');
 	Route::get('/recetas/producto/delete/{id_rec}/{id_pro}','RecetasController@prodDelete');
 	Route::post('recetas/store',[

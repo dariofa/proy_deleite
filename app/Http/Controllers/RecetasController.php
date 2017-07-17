@@ -115,7 +115,10 @@ public function getProductos(){
      */
     public function destroy($id) 
     {
-        //
+        $receta = Receta::find($id);
+        $receta->delete();
+        flash::success('La receta se elimino con éxito');
+       return redirect('/admin/recetas/');
     }
 
     public function productUpdate(Request $request){

@@ -23684,24 +23684,30 @@ button.toast-close-button {
 }
 .btn-add-prod{
   background: #F5B041 !important;
+  cursor: pointer;
 }
 .btn-add-new-prod{
   background: #2980B9 !important;
+  cursor: pointer;
 }
 .btn-add-prod-edit{
   background: #F5B041 !important;
   width: 50% !important;
   margin: 0 auto !important;
   margin-top: 2px !important;
+  cursor: pointer;
 }
 .btn-upd-prod{
   background: #28B463 !important;
+  cursor: pointer;
 }
 .btn-del-prod{
   background: #E74C3C !important;
+  cursor: pointer;
 }
 .btn-minus-prod{
  background: #EC7063 !important; 
+ cursor: pointer;
 }
 .content-add-ingr{
   margin-top:1px !important;

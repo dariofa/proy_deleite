@@ -38,6 +38,8 @@ class UsersController extends Controller
        $user = new User($request->all());
        $user->password = bcrypt($request->password);
        $user->save();
+
+       return redirect('/');
        
     }
 

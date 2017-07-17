@@ -38,10 +38,10 @@
                 {!! Form::text('nombre',$receta->nombre,['class'=>'form-control','required']) !!}
 
                 {!! Form::label('descripcion','Descripción') !!}
-                {!! Form::textarea('descripcion',$receta->descripcion,['class'=>'form-control','rows'=>'3']) !!}
+                {!! Form::textarea('descripcion',$receta->descripcion,['class'=>'form-control','rows'=>'3','required']) !!}
                 <hr>
                 
-                {!! Form::submit('Registrar',['class'=>'btn btn-success btn-block']) !!}
+                {!! Form::submit('Actualizar',['class'=>'btn btn-warning btn-block']) !!}
                 {!! Form::close() !!}
                 <hr>
                 <div class="alert alert-warning" style="display: none" id="alert">El ingrediente ya existe</div>

@@ -56,7 +56,7 @@
                                <i class="fa fa-edit"></i>
                             </button>
         </a>
-		<a href="#" onclick="return confirm('¿Está seguro de eliminar el registro?')">
+		<a href="/admin/recetas/delete/{{ $receta->id }}" onclick="return confirm('¿Está seguro de eliminar el registro?')">
                             <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" data-original-title="Eliminar">
                                <i class="fa fa-trash"></i>
                             </button>
