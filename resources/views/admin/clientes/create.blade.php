@@ -44,7 +44,7 @@
                 {!! Form::text('telefono',null,['class'=>'form-control','id'=>'tel']) !!}
 				
 				{{!!Form::label('descuento', 'Descuento')!!}}
-                {!! Form::select('descuento', [''=>'Seleccione el descuento...', '12'=>'12%', '15'=>'15%'], null,[class => 'form-control']!!}
+                {!! Form::select('descuento', [''=>'Seleccione el descuento...', '12'=>'12%', '15'=>'15%'], null, ['class' => 'form-control'])!!}
                 <hr>
                 {!! Form::submit('Registrar',['class'=>'btn btn-success btn-block']) !!}
                 {!! Form::close() !!}

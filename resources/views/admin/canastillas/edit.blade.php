@@ -13,7 +13,7 @@
 				<!-- Default box -->
 				<div class="box">
 					<div class="box-header with-border">
-					<a href="/admin/clientes/">
+					<a href="/admin/canastillas/">
                             <button type="button" class="btn btn-info waves-effect waves-light" data-toggle="tooltip" data-placement="top" data-original-title="Ir al Menú">
                                <i class="fa fa-home"></i>
                             </button>
@@ -32,19 +32,14 @@
 						<div class="row">
 							<div class="col-md-7">
 								<div class="form">
-				{!! Form::open(['route' => ['admin.clientes.update',$cliente->id], 'method' => 'post']) !!}
+				{!! Form::open(['route' => ['admin.canastillas.update',$canastilla->id], 'method' => 'post']) !!}
 
-                {!! Form::label('nombre','Nombre del Cliente') !!}
-                {!! Form::text('nombre',$cliente->nombre,['class'=>'form-control']) !!}
+                {!! Form::label('descripcion','Descripción') !!}
+                {!! Form::text('descripcion',$canastilla->descripcion,['class'=>'form-control']) !!}
 
-                {!! Form::label('direcccion','Direccion') !!}
-                {!! Form::text('direccion',$cliente->direccion,['class'=>'form-control']) !!}
+                {!! Form::label('cantidad','Cantidad') !!}
+                {!! Form::number('cantidad',$canastilla->cantidad,['class'=>'form-control bfh-number']) !!}
 
-                {!! Form::label('telefono','Teléfono') !!}
-                {!! Form::text('tel',$cliente->telefono,['class'=>'form-control']) !!}
-
-                {{!!Form::label('descuento', 'Descuento')!!}}
-                {!! Form::select('descuento', [''=>'Seleccione el descuento...', '12'=>'12%', '15'=>'15%'], null,['class' => 'form-control'])!!}
                 <hr>
                 {!! Form::submit('Actualizar',['class'=>'btn btn-warning btn-block']) !!}
                 {!! Form::close() !!}

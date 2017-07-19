@@ -80,7 +80,8 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
 	Route::get('/clientes/create','ClientesController@create');
 	Route::get('/clientes/delete/{id}','ClientesController@destroy');
 	Route::get('/clientes/edit/{id}','ClientesController@edit');
-	Route::get('/clientes/delete/{id}','ClientesController@Delete');
+	Route::get('/clientes/add/{id}','ClientesController@canastillasAdd');
+
 	Route::post('clientes/store',[
 	'uses' => 'ClientesController@store',
 	'as'=>'admin.clientes.store'
@@ -90,13 +91,21 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
 	'as'=>'admin.clientes.update'
 	]);
 
+	Route::post('clientes/assign',[
+	'uses' => 'ClientesController@assign',
+	'as' => 'admin.clientes.assign'
+	]);
+
+
 	//Administracion de canastillas
 
 	Route::get('/canastillas/','CanastillasController@index');
 	Route::get('/canastillas/create','CanastillasController@create');
 	Route::get('/canastillas/delete/{id}','CanastillasController@destroy');
 	Route::get('/canastillas/edit/{id}','CanastillasController@edit');
-	Route::get('/canastillas/delete/{id}','CanastillasController@Delete');
+
+	Route::get('/canastillas/asigned/{id}','CanastillasController@asigned');
+	
 	Route::post('canastillas/store',[
 	'uses' => 'CanastillasController@store',
 	'as'=>'admin.canastillas.store'

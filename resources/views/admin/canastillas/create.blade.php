@@ -13,12 +13,12 @@
 				<!-- Default box -->
 				<div class="box">
 					<div class="box-header with-border">
-					<a href="/admin/clientes/">
+					<a href="/admin/canastillas/">
                             <button type="button" class="btn btn-info waves-effect waves-light" data-toggle="tooltip" data-placement="top" data-original-title="Ir al Menú">
                                <i class="fa fa-home"></i>
                             </button>
                   </a>
-						<h3 class="box-title">Actualizar</h3>
+						<h3 class="box-title">Agregar Canastillas</h3>
 
 						<div class="box-tools pull-right">
 							<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -30,23 +30,17 @@
 					<div class="box-body">
 						
 						<div class="row">
-							<div class="col-md-7">
+							<div class="col-md-8 col-md-offset-2">
 								<div class="form">
-				{!! Form::open(['route' => ['admin.clientes.update',$cliente->id], 'method' => 'post']) !!}
+				{!! Form::open(['route' => 'admin.canastillas.store', 'method' => 'post']) !!}
 
-                {!! Form::label('nombre','Nombre del Cliente') !!}
-                {!! Form::text('nombre',$cliente->nombre,['class'=>'form-control']) !!}
+                {!! Form::label('descripcion','Descripción') !!}
+                {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
 
-                {!! Form::label('direcccion','Direccion') !!}
-                {!! Form::text('direccion',$cliente->direccion,['class'=>'form-control']) !!}
-
-                {!! Form::label('telefono','Teléfono') !!}
-                {!! Form::text('tel',$cliente->telefono,['class'=>'form-control']) !!}
-
-                {{!!Form::label('descuento', 'Descuento')!!}}
-                {!! Form::select('descuento', [''=>'Seleccione el descuento...', '12'=>'12%', '15'=>'15%'], null,['class' => 'form-control'])!!}
+                {!! Form::label('cantidad','Cantidad') !!}
+                {!! Form::number('cantidad',null,['class'=>'form-control bfh-number']) !!}
                 <hr>
-                {!! Form::submit('Actualizar',['class'=>'btn btn-warning btn-block']) !!}
+                {!! Form::submit('Registrar',['class'=>'btn btn-success btn-block']) !!}
                 {!! Form::close() !!}
 								</div>
 							</div>

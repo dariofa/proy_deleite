@@ -14,12 +14,12 @@
 				<div class="box">
 					<div class="box-header with-border">
 						
-						<a href="/admin/clientes/create/">
-                            <button type="button" class="btn btn-info waves-effect waves-light" data-toggle="tooltip" data-placement="top" data-original-title="Nuevo cliente">
+						<a href="/admin/canastillas/create/">
+                            <button type="button" class="btn btn-info waves-effect waves-light" data-toggle="tooltip" data-placement="top" data-original-title="Agregar canastillas">
                                <i class="fa fa-plus-square"></i>
                             </button>
                   </a>
-                  <h3 class="box-title">Clientes</h3>
+                  <h3 class="box-title">Canastillas</h3>
 
 						<div class="box-tools pull-right">
 							<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -35,40 +35,31 @@
 								<div class="contenedor">
 								<table class="table table-responsive table-striped">
 									<thead>
-									<th>Nombre del Cliente</th>
-									<th>Dirección</th>
-									<th>Teléfono</th>
-									<th>Descuento</th>
+									<th>Descripción</th>
+									<th>Cantidad</th>
 									<th>Acciones</th>
 									</thead>
 									<tbody>
-										@foreach($clientes as $cliente)
+										@foreach($canastillas as $canastilla)
 										<tr>
 											<td>
-												{{ $cliente->nombre }}
+												{{ $canastilla->descripcion }}
 											</td>
 											<td>
-												{{ $cliente->direccion }}
+												{{ $canastilla->cantidad }}
 											</td>
 											<td>
-												{{ $cliente->telefono }}
-											</td>
-											<td>
-												{{ $cliente->descuento }}
-											</td>
-											<td>
-
-					<a href="#" data-toggle="modal" data-target="#myModal" onclick="sendId({{ $cliente->id}})">
-                       		<button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" data-original-title="Asignar canastillas">
-                               <i class="fa  fa-plus-circle"></i>
+					<a href="#" data-toggle="modal" data-target="#myModal" onclick="sendId({{ $canastilla->id}})">
+                       		<button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" data-original-title="Estado">
+                               <i class="fa  fa-user-circle"></i>
                             </button>
-                  </a>				
-					<a href="/admin/clientes/edit/{{ $cliente->id }}">
+                  </a>		
+					<a href="/admin/canastillas/edit/{{ $canastilla->id }}">
                             <button type="button" class="btn btn-warning waves-effect waves-light" data-toggle="tooltip" data-placement="top" data-original-title="Editar">
                                <i class="fa fa-edit"></i>
                             </button>
                   </a>
-                  <a href="/admin/clientes/delete/{{ $cliente->id }}" onclick="return confirm('¿Está seguro de eliminar el registro?')">
+                  <a href="/admin/canastillas/delete/{{ $canastilla->id }}" onclick="return confirm('¿Está seguro de eliminar el registro?')">
                             <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" data-original-title="Eliminar">
                                <i class="fa fa-trash"></i>
                             </button>
@@ -78,7 +69,7 @@
 										@endforeach
 									</tbody>
 								</table>
-								{{ $clientes->render() }}
+								{{ $canastillas->render() }}
 								</div>
 							</div>
 						</div>
@@ -91,35 +82,35 @@
 			</div>
 		</div>
 	</div>
+
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Asignando Canastillas</h4>
+        <h4 class="modal-title" id="myModalLabel">Canastillas asignadas</h4>
       </div>
-      {!! Form::open(['route' => ['admin.clientes.assign',$cliente->id], 'method' => 'post']) !!}	
+      {!! Form::open(['route' => ['admin.clientes.assign',$canastilla->id], 'method' => 'post']) !!}	
       {!! Form::hidden('id',null,['class'=>'form-control','id'=>'producto_id']) !!}
       <div class="modal-body">
-     {!! Form::label('cliente','Cliente') !!}
-     {!! Form::text('cliente',$cliente->nombre,['class'=>'form-control','id'=>'cliente_name' ]) !!}
-     {{!!Form::label('descripcion', 'Descripción')!!}}
 
-     
-     {!! Form::select('descripcion', [''=>'Seleccione canastilla...', 'canastilla'=>'aqui las canastillas'], null, ['class' => 'form-control'])!!}
+	 {!! Form::label('cliente','Cliente') !!}
+     {!! Form::text('cliente','Aqui el cliente',['class'=>'form-control']) !!}
+
+     {!! Form::label('descripcion','Descripcion') !!}
+     {!! Form::text('descripcion',$canastilla->descripcion,['class'=>'form-control']) !!}
 
      {!! Form::label('cantidad','Cantidad') !!}
-     {!! Form::number('cantidad',null,['class'=>'form-control','id'=>'cant_canastilla']) !!}
+     {!! Form::text('cantidad',$canastilla->cantidad,['class'=>'form-control']) !!}
 
     
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        {!! Form::submit('Asignar',['class'=>'btn btn-warning']) !!}
+        {!! Form::submit('Devolver',['class'=>'btn btn-success']) !!}
       </div>
       {!! Form::close() !!}
     </div>
   </div>
 </div>
-
 @endsection
