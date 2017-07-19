@@ -95,6 +95,7 @@ return array(
     'Cpdf' => $vendorDir . '/dompdf/dompdf/lib/Cpdf.php',
     'CreateCanastillasTable' => $baseDir . '/database/migrations/2017_07_17_011426_create_canastillas_table.php',
     'CreateClientesTable' => $baseDir . '/database/migrations/2017_07_17_011634_create_clientes_table.php',
+    'CreateIngresosCajaTable' => $baseDir . '/database/migrations/2017_07_18_232218_create_ingresosCaja_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateProductosBodegaTable' => $baseDir . '/database/migrations/2017_07_13_020525_create_productos_bodega_table.php',
     'CreateRecetasTable' => $baseDir . '/database/migrations/2017_07_13_234656_create_recetas_table.php',

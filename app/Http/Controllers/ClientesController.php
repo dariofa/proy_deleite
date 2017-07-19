@@ -102,4 +102,11 @@ class ClientesController extends Controller
         $clientes = Cliente::all();
         return response()->json($clientes);
     }
+
+    public function canastillasAdd(Request $request){
+        $cliente = Cliente::find($request->cliente_id);
+        $cliente->canastillas()->attach($request->canastilla_id);  
+        Flash::success('Canastilla: '.$canastilla_id.' asignada con exito');
+        return redirect('/admin/clientes/');  
+    }
 }

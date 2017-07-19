@@ -138,7 +138,7 @@ public function getProductos(){
         if ($num <= 0) {
             $receta->productos()->attach($request->producto_id,[
                         'cantidad_gr'=>$request->gramos,
-                        'cantidad_kg'=>($request->gramos/1000)
+                        'cantidad_kg'=>($request->gramos/1000)//asignacion en tabla pivote
         ]);
             $mensaje = ['mensaje'=>'Informacion agregada','encontrado'=>false];
         }else{

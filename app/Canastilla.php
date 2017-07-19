@@ -12,4 +12,9 @@ class Canastilla extends Model
    			'descripcion',
    			'cantidad'
   		];
+
+  	public function clientes(){
+    return $this->belongsToMany('App\Cliente','canastillas_clientes')->withPivot('cantidad_prestadas','canastillas_id','cliente_id')->withTimestamps();
+	}
 }
+

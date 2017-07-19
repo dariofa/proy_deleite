@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Canastilla;
+use App\Cliente;
+use Laracasts\Flash\Flash;
 
 class CanastillasController extends Controller
 {
@@ -36,7 +39,10 @@ class CanastillasController extends Controller
      */
     public function store(Request $request)
     {
-        
+       $canastilla = new Canastilla($request->all());
+        $canastilla->save();
+        Flash::success('Canastilla(s) registrado con exito');
+        return redirect('/admin/canastillas/create'); 
     }
 
     /**
@@ -58,7 +64,8 @@ class CanastillasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $canastilla = Canastilla::find($id);
+        return view('admin.canastillas.edit',['canastilla'=>$canastilla]);
     }
 
     /**
@@ -70,7 +77,11 @@ class CanastillasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $canastilla = Canastilla::find($id);
+        $canastilla->fill($request->all());
+        $canastilla->save();
+        Flash::success('Canastilla(s)  actualizado con exito');        
+        return redirect('/admin/canastillas/');
     }
 
     /**
@@ -81,6 +92,16 @@ class CanastillasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $canastilla = Canastilla::find($id);
+         $canastilla->delete();
+         Flash::success('Canastilla(s) eliminado con exito');
+        return redirect('/admin/canastillas/');
+    }
+
+    public function asigned($id)
+    {
+        $canastilla = Canastilla::find($id);
+        return view('admin.canastillas.asigned', ['canastilla'=>$canastilla]);
+
     }
 }
