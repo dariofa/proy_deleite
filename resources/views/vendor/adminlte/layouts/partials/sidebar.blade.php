@@ -103,7 +103,41 @@
                         </li>  
                     </li>   
                 </ul>
-
+                <ul class="treeview-menu">
+                    <li>
+                       <li class="treeview">
+                <a href="#"><i class='fa fa-dollar'></i> <span>Caja</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li>
+                    <a href="/admin/cajas/create">Agregar caja</a>
+                    </li>
+                    <li>
+                    <a href="/admin/cajas/">Ver cajas</a>
+                    </li>
+                    <li>
+                    <a href="/admin/cajas/otrosEgresos">Otros Egresos Caja</a>
+                    </li>
+                </ul>
+                
+                        </li>  
+                    </li>   
+                </ul>
+                 <ul class="treeview-menu">
+                    <li>
+                       <li class="treeview">
+                <a href="#"><i class='fa fa-edit'></i> <span>Pedidos</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li>
+                    <a href="/admin/pedidos/">Ver pedidos</a>
+                    </li>
+                    <li>
+                    <a href="/admin/pedidos/create">Nuevo pedido</a>
+                    </li>
+                </ul>
+                
+                        </li>  
+                    </li>   
+                </ul>
         </li><!-- /.treeview -->
 
         </ul><!-- /.sidebar-menu -->

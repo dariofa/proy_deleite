@@ -34,6 +34,9 @@
 								<div class="form">
 				{!! Form::open(['route' => 'admin.bodega.producto.store', 'method' => 'post']) !!}
 
+                {!! Form::label('caja_id','Descontar de caja') !!}
+                {!! Form::select('caja_id',$cajas,null,['class'=>'form-control']) !!}
+
                 {!! Form::label('nombre','Nombre del Producto') !!}
                 {!! Form::text('nombre',null,['class'=>'form-control']) !!}
 

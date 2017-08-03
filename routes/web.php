@@ -115,6 +115,38 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
 	'as'=>'admin.canastillas.update'
 	]);
 
+	//Administracion de caja
+	Route::get('/cajas/','CajasController@index');
+	Route::get('/cajas/create','CajasController@create');
+	Route::get('/cajas/otrosEgresos','OtrosEgresosCajasController@index');
+	Route::get('/cajas/otrosEgresos/create','OtrosEgresosCajasController@create');
+	Route::get('/cajas/edit/{id}','CajasController@edit');
+	Route::get('/cajas/delete/{id}','CajasController@destroy');
+	Route::post('/cajas/store/',[
+	'uses' => 'CajasController@store',
+	'as'=>'admin.cajas.store'
+	]);
+	Route::post('cajas/update/{id}',[
+	'uses' => 'CajasController@update',
+	'as'=>'admin.cajas.update'
+	]);
+	Route::post('/cajas/otrosEgresos/store',[
+	'uses' => 'OtrosEgresosCajasController@store',
+	'as'=>'admin.cajas.otrosEgresos.store'
+	]);
+
+	//Administracion de pedidos
+	Route::get('/pedidos/','PedidosController@index');
+	Route::get('/pedidos/create','PedidosController@create');
+	Route::get('/pedidos/edit/{id}','PedidosController@edit');
+	Route::post('/pedidos/store/',[
+	'uses' => 'PedidosController@store',
+	'as'=>'admin.pedidos.store'
+	]);
+	Route::post('pedidos/update/{id}',[
+	'uses' => 'PedidosController@update',
+	'as'=>'admin.pedidos.update'
+	]);
 });
 
 ///
