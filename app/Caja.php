@@ -25,4 +25,8 @@ class Caja extends Model
 		
 		return $this->hasMany('App\OtrosEgresosCaja');
 	}
+	public function otros_ingresos_caja(){
+		
+		return $this->hasMany('App\OtrosEgresosCaja');
+	}
 }
