@@ -460,6 +460,7 @@ class ComposerStaticInitacefb9e3c32e53730b69c02852ba9402
         'CreateCanastillasTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_17_011426_create_canastillas_table.php',
         'CreateClientesTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_17_011634_create_clientes_table.php',
         'CreateOtrosEgresosCajasTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_03_024119_create_otros_egresos_cajas_table.php',
+        'CreateOtrosIngresosCajasTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_05_163234_create_otros_ingresos_cajas_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreatePedidosTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_02_212447_create_pedidos_table.php',
         'CreateProductosBodegaTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_13_020525_create_productos_bodega_table.php',

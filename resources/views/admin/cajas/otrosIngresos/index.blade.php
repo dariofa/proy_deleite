@@ -13,12 +13,12 @@
 				<!-- Default box -->
 				<div class="box">
 					<div class="box-header with-border">
-						<a href="/admin/cajas/otrosEgresos/create/">
-                            <button type="button" class="btn btn-info waves-effect waves-light" data-toggle="tooltip" data-placement="top" data-original-title="Nuevo egreso">
+						<a href="/admin/cajas/otrosIngresos/create/">
+                            <button type="button" class="btn btn-info waves-effect waves-light" data-toggle="tooltip" data-placement="top" data-original-title="Nuevo ingreso">
                                <i class="fa fa-plus-square"></i>
                             </button>
                   		</a>
-                  <h3 class="box-title">Otros egresos caja</h3>
+                  <h3 class="box-title">Otros ingresos caja</h3>
 
 						<div class="box-tools pull-right">
 							<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -40,22 +40,22 @@
 									<th>Usuario</th>
 									</thead>
 									<tbody>
-									@foreach($egresos as $egreso)
+									@foreach($ingresos as $ingreso)
 										<tr>
 											<td>
-												{{ $egreso->concepto }}
+												{{ $ingreso->concepto }}
 											</td>
 											<td>
-												{{ $egreso->valor }}
+												{{ $ingreso->valor }}
 											</td>
 											<td>
-												{{ $egreso->caja->nombre }}
+												{{ $ingreso->caja->nombre }}
 											</td>
 											<td>
-												{{ $egreso->user->name }}
+												{{ $ingreso->user->name }}
 											</td>
 											<td>	
-                  <a href="/admin/cajas/otrosEgresos/delete/{{ $egreso->id }}" onclick="return confirm('¿Está seguro de eliminar el registro?')">
+                  <a href="/admin/cajas/otrosIngresos/delete/{{ $ingreso->id }}" onclick="return confirm('¿Está seguro de eliminar el registro?')">
                             <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" data-original-title="Eliminar">
                                <i class="fa fa-trash"></i>
                             </button>

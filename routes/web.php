@@ -118,8 +118,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
 	//Administracion de caja
 	Route::get('/cajas/','CajasController@index');
 	Route::get('/cajas/create','CajasController@create');
-	Route::get('/cajas/otrosEgresos','OtrosEgresosCajasController@index');
-	Route::get('/cajas/otrosEgresos/create','OtrosEgresosCajasController@create');
+
 	Route::get('/cajas/edit/{id}','CajasController@edit');
 	Route::get('/cajas/delete/{id}','CajasController@destroy');
 	Route::post('/cajas/store/',[
@@ -130,11 +129,24 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
 	'uses' => 'CajasController@update',
 	'as'=>'admin.cajas.update'
 	]);
+	//otros egresos
+	Route::get('/cajas/otrosEgresos','OtrosEgresosCajasController@index');
+	Route::get('/cajas/otrosEgresos/create','OtrosEgresosCajasController@create');
 	Route::post('/cajas/otrosEgresos/store',[
 	'uses' => 'OtrosEgresosCajasController@store',
 	'as'=>'admin.cajas.otrosEgresos.store'
 	]);
+	Route::get('/cajas/otrosEgresos/delete/{id}','OtrosEgresosCajasController@destroy');
 
+	//otros ingresos
+	Route::get('/cajas/otrosIngresos','OtrosIngresosCajasController@index');
+	Route::get('/cajas/otrosIngresos/create','OtrosIngresosCajasController@create');
+	Route::post('/cajas/otrosIngresos/store',[
+	'uses' => 'OtrosIngresosCajasController@store',
+	'as'=>'admin.cajas.otrosIngresos.store'
+	]);
+	Route::get('/cajas/otrosIngresos/delete/{id}','OtrosIngresosCajasController@destroy');
+	
 	//Administracion de pedidos
 	Route::get('/pedidos/','PedidosController@index');
 	Route::get('/pedidos/create','PedidosController@create');

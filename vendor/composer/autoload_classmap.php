@@ -105,6 +105,7 @@ return array(
     'CreateCanastillasTable' => $baseDir . '/database/migrations/2017_07_17_011426_create_canastillas_table.php',
     'CreateClientesTable' => $baseDir . '/database/migrations/2017_07_17_011634_create_clientes_table.php',
     'CreateOtrosEgresosCajasTable' => $baseDir . '/database/migrations/2017_08_03_024119_create_otros_egresos_cajas_table.php',
+    'CreateOtrosIngresosCajasTable' => $baseDir . '/database/migrations/2017_08_05_163234_create_otros_ingresos_cajas_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePedidosTable' => $baseDir . '/database/migrations/2017_08_02_212447_create_pedidos_table.php',
     'CreateProductosBodegaTable' => $baseDir . '/database/migrations/2017_07_13_020525_create_productos_bodega_table.php',
