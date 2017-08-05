@@ -38,13 +38,14 @@ class OtrosEgresosCajasController extends Controller
      */
     public function store(Request $request)
     {
+      
         $egreso = new OtrosEgresoscaja($request->all());
         $egreso->user_id = \Auth::user()->id;
         $egreso->save();
 
         $caja = Caja::find($request->caja_id);
         $saldo_actual = $caja->saldo_actual;
-        $nuevo_saldo = $saldo_actual - $request->precio;
+        $nuevo_saldo = $saldo_actual - $request->valor;
         $caja->saldo_anterior = $saldo_actual;
         $caja->saldo_actual = $nuevo_saldo;
         $caja->save();
