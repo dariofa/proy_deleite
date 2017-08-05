@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class OtrosEgresosCaja extends Model
+class OtrosIngresosCaja extends Model
 {
-    protected $table = "otros_egresos_cajas";
+    protected $table = "otros_ingresos_cajas";
 
     protected $fillable = [
     		'concepto',
