@@ -14,12 +14,10 @@ class OtrosIngresosCaja extends Model
 			'caja_id',
 			'user_id'
 		];
-	public function caja(){
-		
+	public function caja(){		
 		return $this->belongsTo('App\Caja');
 	}
-	public function user(){
-		
+	public function user(){		
 		return $this->belongsTo('App\User');
 	}
 }

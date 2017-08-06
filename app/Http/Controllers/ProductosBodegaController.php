@@ -26,7 +26,7 @@ class ProductosBodegaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
+    {
         return view('admin.bodega.productos.create');
     }
 
@@ -51,7 +51,6 @@ class ProductosBodegaController extends Controller
         $caja->saldo_anterior = $saldo_actual;
         $caja->saldo_actual = $nuevo_saldo;
         $caja->save();
-
         Flash::success('Producto: '.$producto->nombre.' registrado con exito');
         return redirect('/admin/bodega/producto/crear');
     }
@@ -122,20 +121,6 @@ class ProductosBodegaController extends Controller
             $producto_bodega->peso_gr = $new_gr;
             $producto_bodega->peso_kg = $new_kg;
             $producto_bodega->save();
-
-            $producto_bodega->egresos_cajas()->attach($request->caja_id,[
-                        'valor'=>$request->precio,
-                        'user_id'=>\Auth::user()->id
-                        ]);
-        $caja = Caja::find($request->caja_id);
-        $saldo_actual = $caja->saldo_actual;
-        $nuevo_saldo = $saldo_actual - $request->precio;
-        $caja->saldo_anterior = $saldo_actual;
-        $caja->saldo_actual = $nuevo_saldo;
-        $caja->save();
-
-
-
             Flash::success('Producto: '.$producto_bodega->nombre.' actualizado con exito');
         
             return redirect('/admin/bodega/producto/');

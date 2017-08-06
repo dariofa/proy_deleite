@@ -98,10 +98,16 @@ class CanastillasController extends Controller
         return redirect('/admin/canastillas/');
     }
 
-    public function asigned($id)
+    public function assign(Request $request)
     {
-        $canastilla = Canastilla::find($id);
-        return view('admin.canastillas.asigned', ['canastilla'=>$canastilla]);
+        $canastilla = Canastilla::find($request->canastilla_id);      
+        $canastilla->clientes()->attach($request->id,[
+                        'cantidad_prestadas'=>$request->cantidad,
+                ]);
+        $canastilla->cantidad = ($canastilla->cantidad - $request->cantidad);
+        $canastilla->save();
+        return redirect('/admin/clientes');
+       // return view('admin.canastillas.asigned', ['canastilla'=>$canastilla]);
 
     }
 }

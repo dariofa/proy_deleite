@@ -23674,8 +23674,9 @@ button.toast-close-button {
     width: 25em;
   }
 }
-.form{
-  
+
+/*************************************************************************************/
+.form{  
   border-radius:2px;
   padding: 10px;
   -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
@@ -23718,11 +23719,107 @@ button.toast-close-button {
 .inp-add-gra{
   width: 20% !important;
 }
+.inp-cant-aprox-pr,#labCantAprox{
+  width: 20% !important;
+   
+}
+.inp-val-uni-pr,#labValUnit{
 
+  width: 20% !important;
+ 
 
+}
+.inp-add-pro-ti,#labProd{
+  width:33% !important;
 
+  }
 
+.inp-add-gra-ti,#labVal{
+  width: 25% !important;
+}
+#nodo .icon{
+  font-size: 18px;
+  color: red;
+}
+.help{
+  min-height: 20px;
+  background: green;
+  color: #fff;
+   bottom: 50px;
+  float: left;
+  position: absolute;
+  padding: 10px;
+  border-radius: 5px;
+  display: block;
+  z-index: 130000;
+}
+.table-clientes th,.table-clientes {
+  text-align: center !important;
+}
+.alert{  
+  width: 300px !important;
+  height: 100px !important;
+  position: fixed !important;
+  z-index: 1500000;
+  top: 60px !important;
+  margin-left: 760px !important;
+}
 
+.alert i{
+font-size: 30px !important;
+
+}
+#alerts{
+  background: #2E86C1;
+  color: #fff;
+  font-size: 18px;
+  width: 300px !important;
+  height: 100px !important;
+  position: fixed !important;
+  z-index: 1500000;
+  top: 70px !important;
+  margin-left: 760px !important;
+  display: none;
+  border-radius: 5px;
+  padding: 5px 0px 0px 20px;
+} 
+.color-success{
+  color: green;
+}
+.color-danger{
+  color: red;
+}
+.div-success{
+  background: green;
+  width: 300px;
+  padding:5px;
+  position: absolute;
+  border-radius: 4px;
+  color: #fff !important;
+  display: block !important; 
+  -webkit-transition: 2s; /* Safari */
+    transition: 2s;  
+    margin-left: -300px; 
+     
+  }
+  .div-danger{
+  background: red;
+  width: 300px;
+  padding:5px;
+  position: absolute;
+  border-radius: 4px;
+  color: #fff !important;
+  -webkit-transition: 2s; /* Safari */
+    transition: 2s;
+  display: block !important; 
+  margin-left: -300px; 
+   
+  }
+.hover:hover{
+  background: #F5B041 !important;
+  border-radius: 3px;
+  color: #ffffff !important;
+}
 
 
 

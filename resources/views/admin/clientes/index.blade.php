@@ -8,7 +8,7 @@
 @section('main-content')
 	<div class="container-fluid spark-screen">
 		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
+			<div class="col-md-12">
 
 				<!-- Default box -->
 				<div class="box">
@@ -33,16 +33,17 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="contenedor">
-								<table class="table table-responsive table-striped">
+								<table class="table table-responsive table-striped table-clientes">
 									<thead>
 									<th>Nombre del Cliente</th>
 									<th>Dirección</th>
 									<th>Teléfono</th>
 									<th>Descuento</th>
+									<th>Canastillas Prestadas</th>
 									<th>Acciones</th>
 									</thead>
 									<tbody>
-										@foreach($clientes as $cliente)
+										@foreach($clientes as $cliente) 
 										<tr>
 											<td>
 												{{ $cliente->nombre }}
@@ -57,6 +58,18 @@
 												{{ $cliente->descuento }}
 											</td>
 											<td>
+											@foreach($cliente->canastillas as $canastilla)
+												{{ ($canastilla->pivot->cantidad_prestadas) }}
+												@break
+												@endforeach
+
+											</td>
+											<td>
+					<a href="/admin/tienda/pedidos/create/{{ $cliente->id }}">
+                       		<button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" data-original-title="Nuevo Pedido">
+                               <i class="fa  fa-calendar"></i>
+                            </button>
+                  </a>						
 
 					<a href="#" data-toggle="modal" data-target="#myModal" onclick="sendId({{ $cliente->id}})">
                        		<button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" data-original-title="Asignar canastillas">
@@ -96,20 +109,15 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Asignando Canastillas</h4>
-      </div>
-      {!! Form::open(['route' => ['admin.clientes.assign',$cliente->id], 'method' => 'post']) !!}	
+        <h4 class="modal-title" id="myModalLabel">Asignando Canastillas</h4>      </div>
+      {!! Form::open(['route' => ['admin.canastillas.assign'], 'method' => 'post']) !!}	
       {!! Form::hidden('id',null,['class'=>'form-control','id'=>'producto_id']) !!}
       <div class="modal-body">
-     {!! Form::label('cliente','Cliente') !!}
-     {!! Form::text('cliente',$cliente->nombre,['class'=>'form-control','id'=>'cliente_name' ]) !!}
-     {{!!Form::label('descripcion', 'Descripción')!!}}
 
-     
-     {!! Form::select('descripcion', [''=>'Seleccione canastilla...', 'canastilla'=>'aqui las canastillas'], null, ['class' => 'form-control'])!!}
+     {!! Form::select('canastilla_id',$canastillas, null, ['class' => 'form-control'])!!}
 
      {!! Form::label('cantidad','Cantidad') !!}
-     {!! Form::number('cantidad',null,['class'=>'form-control','id'=>'cant_canastilla']) !!}
+     {!! Form::number('cantidad',null,['class'=>'form-control','id'=>'cant_canastilla','required']) !!}
 
     
       </div>

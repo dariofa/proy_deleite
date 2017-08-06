@@ -27,7 +27,7 @@
 						
 						<div class="row">
 							<div class="col-md-12">
-								<div class="contenedor">
+								<div class="contenedor form">
 								<div class="form-group">
 									{!!Form::open(['route' => 'admin.cajas.otrosEgresos.store', 'method' => 'post'])!!}
 
@@ -38,6 +38,7 @@
 										{!!Form::text('concepto',null,['class'=>'form-control','placeholder'=>'Concepto egreso'],'required')!!}
 										{!!Form::label('valor','Valor')!!}
 										{!!Form::text('valor',null,['class'=>'form-control','placeholder'=>'valor egreso'],'required')!!}
+										<hr>
 										<div class="form-group text-center">
 											{!!Form::submit('Retirar',['class'=>'btn btn-primary'])!!}
 										</div>

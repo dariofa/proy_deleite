@@ -33,7 +33,7 @@
         <ul class="sidebar-menu">
             <li class="header">{{ trans('adminlte_lang::message.header') }}</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
+            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-home'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
             
             <li class="treeview">
                 <a href="#"><i class='fa fa-cog'></i> <span>Administración</span> <i class="fa fa-angle-left pull-right"></i></a>
@@ -47,7 +47,7 @@
                     </li>
                     <li>
                     <a href="/admin/bodega/producto/crear">Agregar un Producto</a>
-                    </li>
+                    </li> 
                 </ul>
                 
             </li>  
@@ -103,10 +103,62 @@
                         </li>  
                     </li>   
                 </ul>
+
+                 <ul class="treeview-menu">
+                    <li>
+                       <li class="treeview">
+                <a href="#"><i class='fa  fa-cart-plus'></i> <span>Tienda</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li>
+                    <a href="/admin/tienda/">Ver todos los productos</a>
+                    </li>
+                    <li>
+                    <a href="/admin/tienda/producto/create">Agregar un Producto/Receta</a>
+                    </li>
+                </ul>
+            </li>  
+                    </li>
+
+
+                    
+                </ul>
+
+                 <ul class="treeview-menu">
+                    <li>
+                       <li class="treeview">
+                <a href="#"><i class='fa   fa-calendar-check-o'></i> <span>Pedidos</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li>
+                    <a href="/admin/tienda/pedidos">Ver todos los pedidos</a>
+                    </li>
+                    <li>
+                    <a href="/admin/tienda/pedidos/create">Nuevo Pedido</a>
+                    </li>
+                </ul>
+            </li>  
+                    </li>                   
+                    
+                </ul>
+
+                  <ul class="treeview-menu">
+                    <li>
+                       <li class="treeview">
+                <a href="#"><i class='fa   fa-calendar-check-o'></i> <span>Producción</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li>
+                    <a href="/admin/tienda/pedidos/produccion">Ver todos los pedidos</a>
+                    </li>
+                   
+                </ul>
+            </li>  
+                    </li>                   
+                    
+                </ul>
+
                 <ul class="treeview-menu">
                     <li>
                        <li class="treeview">
-                <a href="#"><i class='fa fa-dollar'></i> <span>Caja</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa   fa-calendar-check-o'></i> <span>Cajas</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li>
                     <a href="/admin/cajas/create">Agregar caja</a>
@@ -117,27 +169,13 @@
                     <li>
                     <a href="/admin/cajas/otrosEgresos">Otros Egresos Caja</a>
                     </li>
+                   
                 </ul>
-                
-                        </li>  
-                    </li>   
+            </li>  
+                    </li>                   
+                    
                 </ul>
-                 <ul class="treeview-menu">
-                    <li>
-                       <li class="treeview">
-                <a href="#"><i class='fa fa-edit'></i> <span>Pedidos</span> <i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li>
-                    <a href="/admin/pedidos/">Ver pedidos</a>
-                    </li>
-                    <li>
-                    <a href="/admin/pedidos/create">Nuevo pedido</a>
-                    </li>
-                </ul>
-                
-                        </li>  
-                    </li>   
-                </ul>
+
         </li><!-- /.treeview -->
 
         </ul><!-- /.sidebar-menu -->

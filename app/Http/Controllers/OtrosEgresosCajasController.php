@@ -96,9 +96,6 @@ class OtrosEgresosCajasController extends Controller
      */
     public function destroy($id)
     {
-        $egreso = OtrosEgresosCaja::find($id);
-        $egreso->delete();
-        flash('Egreso eliminado con exito!!')->success();
-        return redirect('/admin/cajas/otrosEgresos');
+        //
     }
 }

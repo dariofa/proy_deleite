@@ -2,17 +2,13 @@
 <section class="content-header">
 	<div class="container-fluid spark-screen ">
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+            <div class="col-md-12">
                 <div class="box">
 					<div class="box-header with-border">
-						<h2>
-        				@yield('contentheader_title', 'Administración')
-        				<small>@yield('contentheader_description')</small>
-    					</h2>
-    					<hr>
+						{{-- @if(!isset($ocultar)) --}}
                         <div class="btn-group">
                             <!--Productos-->
-                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"><i class='fa fa-cubes'></i>Productos<span class="caret"></span></button>
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"><i class='fa fa-cubes'></i> Bodega<span class="caret"></span></button>
                             <ul class="dropdown-menu">
                             <li><a href="/admin/bodega/producto/">Ver productos</a></li>
                             <li><a href="/admin/bodega/producto/crear/">Agregar producto</a></li>
@@ -22,8 +18,8 @@
                         <div class="btn-group">
                             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class='fa fa-edit'></i>Pedidos<span class="caret"></span></button>
                             <ul class="dropdown-menu">
-                            <li><a href="/admin/pedidos/">Ver pedidos</a></li>
-                            <li><a href="/admin/pedidos/create/">Agregar pedido</a></li>
+                            <li><a href="/admin/tienda/pedidos/">Ver pedidos</a></li>
+                            <li><a href="/admin/clientes/">Agregar pedido</a></li>
                             </ul>
                         </div>
                         <!--Clientes-->
@@ -36,14 +32,22 @@
                             </ul>
                         </div>
                         <!--Caja-->
-                        <div class="btn-group">
+                        <div class="btn-group" >
                             <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"><i class='fa fa-dollar'></i>Caja<span class="caret"></span></button>
                             <ul class="dropdown-menu">
-                            <li><a href="/admin/cajas/create/" style="hover:'red'">Agregar caja</a></li>
-                            <li><a href="/admin/cajas">Ver cajas</a></li>
-                            <li><a href="/admin/cajas/otrosEgresos">Otros egresos cajas</a></li>
+                            <li><a class="hover" href="/admin/cajas">Ver</a></li>
+                            <li class="hover"><a class="hover" href="/admin/cajas/create/">Agregar</a></li>                            
+                            <li><a class="hover" href="/admin/cajas/otrosEgresos/create">Otros Egresos</a></li>
+                            <li><a class="hover" href="/admin/cajas/otrosIngresos/create">Otros Ingresos</a></li>
                             </ul>
                         </div>
+                        {{-- @else
+                        
+                        <h3>Welcome-</h3>
+
+                        @endif --}}
+
+                        
                     </div>
                 </div>
             </div>

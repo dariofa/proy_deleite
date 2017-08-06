@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePedidosTable extends Migration
+class CreateOtrosIngresosCajasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,16 @@ class CreatePedidosTable extends Migration
      */
     public function up()
     {
-        Schema::create('pedidos', function(Blueprint $table){
+        Schema::create('otros_ingresos_cajas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('valor_neto');
-            $table->date('fecha_pedido');
-            $table->string('estado');
-
-            $table->integer('cliente_id')->unsigned();
-            $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade');
+             $table->string('concepto');
+            $table->integer('valor');
+            $table->integer('caja_id')->unsigned();
+            $table->foreign('caja_id')->references('id')->on('cajas')->onDelete('cascade');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-
             $table->timestamps();
         });
-
     }
 
     /**
@@ -36,6 +32,6 @@ class CreatePedidosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pedidos');
+        Schema::dropIfExists('otros_ingresos_cajas');
     }
 }

@@ -94,7 +94,14 @@ class CajasController extends Controller
     {
         $caja = Caja::find($id);
         $caja->delete();
-        flash('Caja eliminada con exito!!')->success();      
+        Flash::success('Caja: '.$caja->nombre.' eliminada con exito');
         return redirect('/admin/cajas/');
+    }
+
+    public function showMov($id){
+
+        $caja = Caja::find($id);
+        return view('admin.cajas.movimientos.index',['caja'=>$caja]);
+
     }
 }

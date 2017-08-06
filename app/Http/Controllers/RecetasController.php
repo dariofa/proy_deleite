@@ -120,7 +120,7 @@ public function getProductos(){
         flash::success('La receta se elimino con éxito');
        return redirect('/admin/recetas/');
     }
-
+ 
     public function productUpdate(Request $request){
         $receta = Receta::find($request->id);
         $gramos = $receta->productos()->where('producto_bodega_id','=',$request->codigo)->first();

@@ -90,26 +90,15 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Canastillas asignadas</h4>
       </div>
-      {!! Form::open(['route' => ['admin.clientes.assign',$canastilla->id], 'method' => 'post']) !!}	
-      {!! Form::hidden('id',null,['class'=>'form-control','id'=>'producto_id']) !!}
-      <div class="modal-body">
-
-	 {!! Form::label('cliente','Cliente') !!}
-     {!! Form::text('cliente','Aqui el cliente',['class'=>'form-control']) !!}
-
-     {!! Form::label('descripcion','Descripcion') !!}
-     {!! Form::text('descripcion',$canastilla->descripcion,['class'=>'form-control']) !!}
-
-     {!! Form::label('cantidad','Cantidad') !!}
-     {!! Form::text('cantidad',$canastilla->cantidad,['class'=>'form-control']) !!}
+      
 
     
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        {!! Form::submit('Devolver',['class'=>'btn btn-success']) !!}
+        
       </div>
-      {!! Form::close() !!}
+      
     </div>
   </div>
 </div>

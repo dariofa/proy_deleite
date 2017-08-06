@@ -16,4 +16,8 @@ class Receta extends Model
     public function productos(){
     return $this->belongsToMany('App\ProductoBodega','productos_recetas')->withPivot('cantidad_kg','cantidad_gr','producto_bodega_id','receta_id')->withTimestamps();
     }
+
+    public function tienda(){
+    	return $this->hasOne('App\ProductoTienda');
+    }
 }

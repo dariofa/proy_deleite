@@ -8,7 +8,7 @@
 @section('main-content')
 	<div class="container-fluid spark-screen">
 		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
+			<div class="col-md-12">
 
 				<!-- Default box -->
 				<div class="box">
@@ -32,11 +32,12 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="contenedor">
-								<table class="table table-responsive table-striped">
+								<table class="table table-responsive table-striped" align="center">
 									<thead>
 									<th>Nombre</th>
 									<th>Saldo anterior</th>
 									<th>Saldo actual</th>
+									<th width="30%">Acciones</th>
 									</thead>
 									<tbody>
 									@foreach($cajas as $caja)
@@ -51,14 +52,19 @@
 												{{ $caja->saldo_actual }}
 											</td>
 											<td>	
+					<a href="/admin/cajas/movimientos/{{ $caja->id }}">
+                            <button type="button" class="btn btn-info waves-effect waves-light" data-toggle="tooltip" data-placement="top" data-original-title="Ver Movimientos">
+                               <!--<i class="fa fa-eye"></i>-->Ver Movimientos
+                            </button>
+                  </a>						
 					<a href="/admin/cajas/edit/{{ $caja->id }}">
                             <button type="button" class="btn btn-warning waves-effect waves-light" data-toggle="tooltip" data-placement="top" data-original-title="Editar">
-                               <i class="fa fa-edit"></i>
+                               Editar
                             </button>
                   </a>
                   <a href="/admin/cajas/delete/{{ $caja->id }}" onclick="return confirm('¿Está seguro de eliminar el registro?')">
                             <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" data-original-title="Eliminar">
-                               <i class="fa fa-trash"></i>
+                               Eliminar
                             </button>
                   </a>
 											</td>

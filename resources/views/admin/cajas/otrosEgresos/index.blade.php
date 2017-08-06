@@ -49,10 +49,10 @@
 												{{ $egreso->valor }}
 											</td>
 											<td>
-												{{ $egreso->caja->nombre }}
+												{{ $egreso->caja_id }}
 											</td>
 											<td>
-												{{ $egreso->user->name }}
+												{{ $egreso->user_id }}
 											</td>
 											<td>	
                   <a href="/admin/cajas/otrosEgresos/delete/{{ $egreso->id }}" onclick="return confirm('¿Está seguro de eliminar el registro?')">

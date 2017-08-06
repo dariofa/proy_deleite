@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOtrosIngresosCajasTable extends Migration
+class CreateOtrosEgresosCajasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateOtrosIngresosCajasTable extends Migration
      */
     public function up()
     {
-        Schema::create('otros_ingresos_cajas', function(Blueprint $table){
+        Schema::create('otros_egresos_cajas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('concepto');
             $table->integer('valor');
-
             $table->integer('caja_id')->unsigned();
             $table->foreign('caja_id')->references('id')->on('cajas')->onDelete('cascade');
             $table->integer('user_id')->unsigned();
@@ -34,6 +33,6 @@ class CreateOtrosIngresosCajasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('otros_egresos_cajas'); 
+        Schema::dropIfExists('otros_egresos_cajas');
     }
 }

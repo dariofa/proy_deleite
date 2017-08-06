@@ -13,7 +13,8 @@ class RecetasComposer
 	
 	public function compose(View $view)
 	{
-		$productos_bodega = ProductoBodega::all();		
+		$productos_bodega = ProductoBodega::all();
+		
 		$view->with(['productos_bodega'=>$productos_bodega]);
 	}
 }

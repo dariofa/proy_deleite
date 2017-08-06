@@ -26,12 +26,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-    public function otrosEgresos(){
-        
+
+      public function otrosEgresos(){        
         return $this->belongsTo('App\OtrosEgresosCaja');
     }
-    public function otrosIngresos(){
-        
-        return $this->belongsTo('App\OtrosEgresosCaja');
+    public function otrosIngresos(){        
+        return $this->belongsTo('App\OtrosIngresosCaja');
     }
 }

@@ -13,20 +13,17 @@ class Caja extends Model
 			'saldo_actual',
 			'saldo_anterior'	
 		];
-	public function egresos_caja(){
-		
-		return $this->belongsToMany('App\ProductoBodega','egresos_caja')->withPivot('producto_bodega_id','caja_id','user_id','valor')->withTimestamps();
+	public function egresos_caja(){		
+		return $this->belongsToMany('App\ProductoBodega','egresos_cajas')->withPivot('producto_bodega_id','caja_id','user_id','valor')->withTimestamps();
 	}
 	public function ingresos_caja(){
 		
-		return $this->belongsToMany('App\Pedido','ingresos_caja')->withPivot('pedido_id','caja_id','user_id','valor')->withTimestamps();
+		return $this->belongsToMany('App\Pedido','ingresos_cajas')->withPivot('pedido_id','caja_id','user_id','valor')->withTimestamps();
 	}
-	public function otros_egresos_caja(){
-		
+	public function otros_egresos_caja(){		
 		return $this->hasMany('App\OtrosEgresosCaja');
 	}
-	public function otros_ingresos_caja(){
-		
-		return $this->hasMany('App\OtrosEgresosCaja');
+	public function otros_ingresos_caja(){		
+		return $this->hasMany('App\OtrosIngresosCaja');
 	}
 }

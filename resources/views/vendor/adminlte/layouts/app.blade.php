@@ -45,8 +45,10 @@ desired effect
         
         <!-- Main content -->
         <section class="content">
+        <div class="alerts" id="alerts">
+                mensaje    
+        </div>
         @include('flash::message')
-        
             <!-- Your Page Content Here -->
             @yield('main-content')
         </section><!-- /.content -->

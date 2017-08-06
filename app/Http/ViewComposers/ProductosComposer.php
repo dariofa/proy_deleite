@@ -1,10 +1,7 @@
 <?php 
 namespace App\Http\ViewComposers;
-
 use Illuminate\View\View;
 use App\Caja;
-
-
 /**
 * 
 */
@@ -17,5 +14,3 @@ class ProductosComposer
 		$view->with(['cajas'=>$cajas]);
 	}
 }
-
-
