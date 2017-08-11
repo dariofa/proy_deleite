@@ -32,16 +32,20 @@
 						<div class="row">
 							<div class="col-md-8 col-md-offset-2">
 								<div class="form">
-				{!! Form::open(['route' => 'admin.bodega.producto.store', 'method' => 'post']) !!}
+				{!! Form::open(['route' => 'admin.bodega.producto.store', 'method' => 'post','id'=>'formulario_busqueda']) !!}
+				
 				{!! Form::label('caja_id','Descontar de caja') !!}
-                {!! Form::select('caja_id',$cajas,null,['class'=>'form-control']) !!}
-
-
+			
+                {!! Form::select('caja_id',$cajas,null,['class'=>'form-control inputText', 'id'=>'caja_id','placeholder'=>'Seleccione caja...']) !!}
+				
+				{!! Form::text('saldo_actual',null,['class'=>'form-control inputText','id'=>'saldo_actual', 'readonly']) !!}
+				
+				
                 {!! Form::label('nombre','Nombre del Producto') !!}
                 {!! Form::text('nombre',null,['class'=>'form-control']) !!}
-
+			
                 {!! Form::label('precio','Precio') !!}
-                {!! Form::text('precio',null,['class'=>'form-control']) !!}
+                {!! Form::text('precio',null,['class'=>'form-control','id'=>'precio']) !!}
 
                 {!! Form::label('peso_kg','Peso en Kg') !!}
                 {!! Form::text('peso_kg',null,['class'=>'form-control','id'=>'peso_kg']) !!}

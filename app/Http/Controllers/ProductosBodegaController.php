@@ -40,9 +40,9 @@ class ProductosBodegaController extends Controller
     {
         $producto = new ProductoBodega($request->all());
         $producto->save();
-
+        $precio_producto = $request->precio;
         $producto->egresos_cajas()->attach($request->caja_id,[
-                        'valor'=>$request->precio,
+                        'valor'=>$precio_producto,
                         'user_id'=>\Auth::user()->id
                         ]);
         $caja = Caja::find($request->caja_id);
