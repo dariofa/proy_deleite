@@ -38,7 +38,7 @@
 									<th>Fecha del Pedido</th>
 									<th>Valor</th>
 									<th>Estado</th>
-									<th>CLiente</th>
+									<th>Cliente</th>
 									<th width="30%">Acciones</th>
 									</thead>
 									<tbody>
