@@ -25,6 +25,54 @@
 			var gramos = parseInt($("#peso_kg").val());
 			$("#peso_gr").val(gramos*1000);
 		});
+		$('#caja_id').change(function(){
+			var caja_id = $(this).val();
+			url = '/admin/cajas/search';
+			$.ajax({
+
+			url:url,
+			type:'POST',
+			cache:false,
+			data: {
+				'caja_id':caja_id
+				},
+				beforeSend: function(xhr){
+					xhr.setRequestHeader('X-CSRF-TOKEN', $("#token").attr('content'));
+				},
+				success: function(respu) {
+		               		//openAlert('Producto actualizado con éxito...');
+		                	//console.log(respu.saldo_actual);
+		                	$('#saldo_actual').val(respu.saldo_actual); 
+		        },
+		        error: function(xhr, textStatus, thrownError) {                  
+		        }
+			});
+			
+		});
+		$('#precio').change(function(){
+			var saldo_actual = $('#saldo_actual').val();
+			var precio = $('#precio').val();
+			if(saldo_actual<precio){
+				$("#saldo_actual").removeClass("PrecioSuccess").addClass("PrecioDanger");
+			}else{
+				$("#saldo_actual").removeClass("PrecioDanger").addClass("PrecioSuccess");
+			}
+			
+
+		});
+		$('#formulario_busqueda').submit(function(){
+			
+			var saldo_actual = $('#saldo_actual').val();
+			var precio = $('#precio').val();
+
+			if(saldo_actual<precio){
+				alert("caja no tiene saldo suficiente");
+				return false;
+			}
+			return true;
+
+		});
+
 		
 /*
 		$("#btn-help").mouseout(function(){			
@@ -530,4 +578,8 @@ function openAlert(mensaje){
     $('#alerts').html('<i class="fa fa-info-circle" > </i> '+mensaje+'');
     $('#alerts').delay(2000).fadeOut(350);
 }
+$('#formulario_busqueda').submit(function(){
+	
+
+})
 </script>

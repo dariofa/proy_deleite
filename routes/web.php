@@ -46,6 +46,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
 	'uses' => 'ProductosBodegaController@update',
 	'as'=>'admin.bodega.producto.update'
 	]);
+	
 	Route::post('bodega/producto/stock/update',[
 	'uses' => 'ProductosBodegaController@stockUpdate',
 	'as'=>'admin.bodega.producto.stock.update'
@@ -189,6 +190,10 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
 	Route::post('cajas/update/{id}',[
 	'uses' => 'CajasController@update',
 	'as'=>'admin.cajas.update'
+	]);
+	Route::post('cajas/search/',[
+	'uses' => 'CajasController@search',
+	'as'=>'admin.cajas.search'
 	]);
 
 	//Egresos 

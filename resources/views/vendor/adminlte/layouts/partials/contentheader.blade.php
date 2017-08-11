@@ -8,27 +8,35 @@
 						{{-- @if(!isset($ocultar)) --}}
                         <div class="btn-group">
                             <!--Productos-->
-                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"><i class='fa fa-cubes'></i> Bodega<span class="caret"></span></button>
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class='fa fa-cubes'></i> Bodega<span class="caret"></span></button>
                             <ul class="dropdown-menu">
-                            <li><a href="/admin/bodega/producto/">Ver productos</a></li>
-                            <li><a href="/admin/bodega/producto/crear/">Agregar producto</a></li>
+                            <li><a class="hover2" href="/admin/bodega/producto/">Ver productos</a></li>
+                            <li><a class="hover2" href="/admin/bodega/producto/crear/">Agregar producto</a></li>
                             </ul>
                         </div>
                             <!--Pedidos-->
                         <div class="btn-group">
                             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class='fa fa-edit'></i>Pedidos<span class="caret"></span></button>
                             <ul class="dropdown-menu">
-                            <li><a href="/admin/tienda/pedidos/">Ver pedidos</a></li>
-                            <li><a href="/admin/clientes/">Agregar pedido</a></li>
+                            <li><a class="hover2" href="/admin/tienda/pedidos/">Ver pedidos</a></li>
+                            <li><a class="hover2" href="/admin/clientes/">Agregar pedido</a></li>
                             </ul>
                         </div>
                         <!--Clientes-->
                         <div class="btn-group">
-                            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"><i class='fa fa-user-circle'></i>Clientes<span class="caret"></span></button>
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class='fa fa-user-circle'></i>Clientes<span class="caret"></span></button>
  
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="/admin/clientes/">Ver clientes</a></li>
-                                <li><a href="/admin/clientes/create/">Agregar cliente</a></li>
+                                <li><a class="hover2" href="/admin/clientes/">Ver clientes</a></li>
+                                <li><a class="hover2" href="/admin/clientes/create/">Agregar cliente</a></li>
+                            </ul>
+                        </div>
+                        
+                        
+                        <div class="btn-group" >
+                            <button type="button" class="dropdown-toggle btn btn-primary" data-toggle="dropdown"><i class='fa fa-calendar-check-o'></i>Produccion<span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                            <li class="hover"><a class="hover2" href="/admin/tienda/pedidos/produccion">Ver pedidos</a></li>                            
                             </ul>
                         </div>
                         <!--Caja-->
