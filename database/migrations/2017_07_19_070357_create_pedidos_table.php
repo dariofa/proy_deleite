@@ -35,6 +35,7 @@ class CreatePedidosTable extends Migration
              $table->string('cantidad_aprox');
              $table->string('estado');
              $table->string('cantidad_prod');
+             $table->string('cantidad_act');
 
             $table->integer('pedido_id')->unsigned();
             $table->foreign('pedido_id')->references('id')->on('pedidos')->onDelete('cascade');
