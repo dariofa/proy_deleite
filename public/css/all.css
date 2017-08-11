@@ -23820,8 +23820,34 @@ font-size: 30px !important;
   border-radius: 3px;
   color: #ffffff !important;
 }
+.hover2:hover{
+  background: #3097D1 !important;
+  border-radius: 3px;
+  color: #ffffff !important;
+}
 
-
-
-
-
+.inputText{
+  width: 50% !important;
+  float: left !important;
+}
+label {
+  display: block !important;
+  margin: .5em 0 0 0 !important;
+}
+.PrecioDanger{
+  background: #F85F5F !important;
+  border-radius: 3px;
+  color: #ffffff !important;
+  border-color: #D81616 !important;
+}
+.PrecioSuccess{
+  background: #C9F5BD !important;
+  border-radius: 3px;
+  color: #A8AAA7 !important;
+  border-color: #2EB109 !important;
+}
+.btn-prod{
+  color: #fff;
+  background-color: #CF2BF0;
+  border-color: #7B0592;
+}
