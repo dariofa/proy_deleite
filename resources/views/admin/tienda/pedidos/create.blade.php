@@ -18,7 +18,7 @@
                                <i class="fa fa-home"></i>
                             </button>
                   </a>
-						<h3 class="box-title">Nueva Pedido</h3>
+						<h3 class="box-title">Nuevo Pedido</h3>
 
 						<div class="box-tools pull-right">
 							<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
