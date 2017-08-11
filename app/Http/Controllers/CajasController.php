@@ -104,4 +104,10 @@ class CajasController extends Controller
         return view('admin.cajas.movimientos.index',['caja'=>$caja]);
 
     }
+
+    public function search(Request $request){
+        $caja = Caja::find($request->caja_id);
+        //$caja = Caja::all();
+        return response()->json($caja);
+    }
 }
